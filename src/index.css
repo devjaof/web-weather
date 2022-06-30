@@ -11,14 +11,14 @@ main {
 }
 
 .night {
-  background-color: rgb(90, 163, 228);
+  background-image: url('./assets/night.jpeg');
   background-size: cover;
   background-position: bottom;
   transition: 0.4s ease-out;
 }
 
 .day {
-  background-color: rgb(243, 197, 71);
+  background-image: url('./assets/day.jpeg');
   background-size: cover;
   background-position: bottom;
   transition: 0.4s ease-out;
