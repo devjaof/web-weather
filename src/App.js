@@ -29,13 +29,14 @@ function App() {
   }
 
   return (
-    <div className={(typeof weather.current != "undefined") ? ((weather.current.is_day === 1) ? 'day': 'night') : 'night'}>
-      <main>
+    <div id="shadow">
+      <div className={(typeof weather.current != "undefined") ? ((weather.current.is_day === 1) ? 'day rounded-3': 'night rounded-3') : 'night rounded-3'}>
+      <main className="d-flex flex-column justify-content-center p-2 rounded-3">
         <div className="container p-2 w-100 mb-5">
           <input
             type="text"
-            className="bg-opacity-75 bg-white border-0 d-block p-3 rounded-3 w-100"
-            placeholder="Busque pela sua cidade..."
+            className="bg-opacity-75 bg-white border-0 d-block p-3 rounded-3"
+            placeholder="Busque por qualquer cidade..."
             onChange={e => setQuery(e.target.value)}
             value={query}
             onKeyPress={search}
@@ -45,7 +46,8 @@ function App() {
           <div>
             <div className="container">
               <div className="location">
-                <h1 className="text-center text-white">{weather.location.name},  {weather.location.region}</h1></div>
+                <h1 className="text-center text-white">{weather.location.name},<br></br>{weather.location.region}</h1>
+              </div>
               <div className="text-center text-white">{dateBuilder()}</div>
             </div>
             <div className="align-items-center bg-opacity-25 bg-white container d-flex flex-column mt-5 p-1 rounded-3">
@@ -65,6 +67,7 @@ function App() {
         ) : ('')}
         
       </main>
+    </div>
     </div>
   );
 };
